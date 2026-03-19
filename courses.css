@@ -1,0 +1,477 @@
+/* courses.css — styling for courses page
+   Matches Radiance design language (bright red, dark blue, optional yellow, white)
+*/
+:root{
+  --red: #c8292b;
+  --nav-blue: #072644;
+  --accent-yellow: #ffd43b;
+  --bg: #ffffff;
+  --text: #07141a;
+  --muted: #47515a;
+  --card-shadow: 0 10px 30px rgba(7,12,20,0.06);
+  --radius: 12px;
+  --container: 1180px;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:1.45}
+.container{max-width:var(--container);margin:0 auto;padding:1.25rem}
+.small{font-size:0.95rem}
+.muted{color:var(--muted)}
+
+/*upper header*/
+
+.top-bar{
+  background:#0a2f53;
+  color:#fff;
+  width:100%;
+  padding:20px 20px;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+.top-bar-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.top-item a{text-decoration: none; color: #ffffff;}
+
+.top-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:22px;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.top-item strong{
+  font-weight:700;
+}
+
+.dot{
+  color:#ff5a4d;
+  font-size:22px;
+  line-height:1;
+  margin-right:2px;
+}
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  margin-left:8px;
+  font-size:16px;
+  border:1px solid rgba(255,255,255,0.25);
+  transition:0.2s ease;
+}
+
+.social a:hover{
+  background:#fff;
+  color:#000;
+}
+
+
+
+.top-social{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.top-social a{
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+  text-decoration:none;
+}
+
+.top-social a i{
+  font-size:18px;
+  display:block;
+}
+.top-social .fb i{ color:#1877F2 !important; }
+.top-social .ig i{ color:#E4405F !important; }
+.top-social .tw i{ color:#1DA1F2 !important; }
+.top-social .yt i{ color:#FF0000 !important; }
+/* -------------------------
+   HEADER / NAV
+   ------------------------- */
+.site-header{
+  background-color:#072644;
+  border-bottom:1px solid rgba(12,20,30,0.06);
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:0.65rem;text-decoration:none}
+.logo{height:70px;width:auto;display:block}
+.brand-text{
+  font-weight:800;
+  font-size:1.05rem;
+  color:var(--nav-blue);
+  letter-spacing:0.2px;
+}
+
+/* main nav */
+.main-nav ul{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.main-nav a{
+  display:inline-block;
+  padding:0.55rem 0.9rem;
+  border-radius:10px;
+  color:white;
+  font-weight:300;
+  font-size: larger;
+  transition: all .15s ease;
+  text-decoration: none;
+}
+.main-nav a:hover{
+  background:rgba(251, 134, 134, 0.481);
+  transform:translateY(-1px);
+}
+.main-nav .active{
+  background:var(--nav-blue);
+  color:#fff;
+  padding:0.45rem 0.85rem;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(7,38,68,0.12);
+}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1fr 420px;gap:1.6rem;align-items:center;padding:2.2rem 0}
+.hero-content h1{font-size:2rem;margin:0 0 0.5rem;color:var(--nav-blue)}
+.lead{color:var(--muted);margin:0 0 0.75rem}
+.cta-row{display:flex;gap:0.75rem}
+.btn{background:var(--red);color:#fff;padding:0.72rem 1.1rem;border-radius:10px;font-weight:800;border:0;cursor:pointer;text-decoration: none;}
+.btn.secondary{background:transparent;border:2px solid rgba(7,12,20,0.06);color:var(--nav-blue)}
+.btn:hover{ transform: translateY(-3px); box-shadow:var(--shadow-2) }
+.btn.ghost{
+  background:transparent;
+  color:var(--nav-blue);
+  border:1px solid rgba(7,38,68,0.08);
+  box-shadow:none;
+}
+
+.hero-card{border-radius:var(--radius);padding:8px;box-shadow:var(--card-shadow);background:linear-gradient(180deg, rgba(7,38,68,0.02), rgba(7,38,68,0.01))}
+.hero-card img{width:100%;height:auto;border-radius:8px;display:block}
+
+/* Levels grid */
+.levels-section{padding:1.6rem 0}
+.levels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.level-card{background:#aee98053;border-radius:12px;padding:16px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px}
+.level-head{display:flex;justify-content:space-between;align-items:center}
+.level-head h3{margin:0;color:var(--nav-blue)}
+.badge{background:rgba(200,40,40,0.08);color:var(--red);padding:6px 10px;border-radius:999px;font-weight:700}
+.badge.accent{background:linear-gradient(90deg, rgba(1,118,168,0.06), rgba(7,38,68,0.03));color:var(--nav-blue)}
+.features-list{margin:6px 0 0 18px;color:var(--muted)}
+.pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(7,12,20,0.03);font-weight:700;color:var(--nav-blue)}
+.level-card .meta-row{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+
+/* Crash courses */
+.crash-section{padding:1.6rem 0}
+.crash-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.crash-card{background:#db7d7d44;border-radius:12px;padding:14px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow)}
+
+/* Competitive */
+.competitive-section{padding:1.6rem 0}
+.competitive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
+.comp-card{background:#76afd559;border-radius:12px;padding:14px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow)}
+
+/*Enroll*/
+.Enroll-section{
+  padding: 1.6rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(1,118,168,0.02), rgba(255,255,255,0));
+}
+
+.Enroll-card{
+  width: 100%;
+  max-width: 880px;
+  background: linear-gradient(180deg, rgba(212,8,8,0.07), rgba(126,5,5,0.03));
+  border-radius: var(--radius);
+  padding: 1.75rem; /* ~28px */
+  box-shadow: var(--card-shadow);
+  border: 1px solid rgba(7,12,20,0.04);
+  box-sizing: border-box;
+}
+
+/* heading + description */
+.Enroll-card h3{
+  margin: 0 0 0.35rem 0;
+  font-size: 1.45rem;
+  color: var(--nav-blue);
+  letter-spacing: -0.2px;
+  font-weight: 800;
+}
+
+.Enroll-card p.small.muted{
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* form shell */
+.Enroll-form{
+  width: 100%;
+}
+
+/* rows: horizontal on desktop, stacked on mobile */
+.Enroll-form .form-row{
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+/* make flex children behave (prevents overflow) */
+.Enroll-form .form-row > *{
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: inherit;
+}
+
+/* inputs & select */
+.Enroll-form input[type="text"],
+.Enroll-form input[type="email"],
+.Enroll-form select{
+  height: 48px;
+  padding: 0.6rem 0.85rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid rgba(7,12,20,0.06);
+  background: #fff;
+  font-size: 0.98rem;
+  color: var(--text);
+  outline: none;
+  transition: box-shadow .15s ease, border-color .12s ease, transform .06s ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* select caret (subtle) */
+.Enroll-form select{
+  padding-right: 2.4rem;
+  background-image:
+    linear-gradient(45deg, transparent 50%, rgba(71,81,90,0.85) 50%),
+    linear-gradient(135deg, rgba(71,81,90,0.85) 50%, transparent 50%);
+  background-position: calc(100% - 14px) calc(50% - 1px), calc(100% - 8px) calc(50% - 1px);
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+}
+
+/* placeholder */
+.Enroll-form input::placeholder{ color: #98a0ab; }
+
+/* focus / keyboard-visible focus (keeps Radiance outline feel) */
+.Enroll-form input:focus,
+.Enroll-form select:focus{
+  border-color: var(--red);
+  box-shadow: 0 8px 24px rgba(1,118,168,0.06);
+  transform: translateY(-1px);
+}
+
+/* request button (red, bold) */
+.Enroll-form .btn{
+  flex: 0 0 auto;
+  height: 48px;
+  min-width: 140px;
+  padding: 0 1.25rem;
+  border-radius: calc(var(--radius) - 2px);
+  border: 0;
+  background: var(--red);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.98rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(200,40,40,0.12);
+  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+/* hover / active / focus */
+.Enroll-form .btn:hover{
+  background: rgba(200,40,40,0.95);
+  transform: translateY(-3px);
+}
+.Enroll-form .btn:active{ transform: translateY(0); }
+.Enroll-form .btn:focus{ outline: 3px solid rgba(1,118,168,0.12); outline-offset: 3px; }
+
+/* stacked / mobile */
+@media (max-width: 640px){
+  .Enroll-card{ padding: 1.25rem; }
+  .Enroll-form .form-row{ flex-direction: column; gap: 0.5rem; }
+  .Enroll-form .btn{ width: 100%; min-width: 0; }
+}
+
+/* small polish */
+.Enroll-form select:invalid{ color: var(--muted); }
+
+/* -------------------------
+   FOOTER
+   ------------------------- */
+.site-footer{
+  background-color:#072644;
+  margin-top:2.5rem;
+  padding-top:1.5rem;;
+  color:white;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+  align-items:start;
+  padding:1.25rem 0;
+}
+.footer-col { text-align:left; }
+.footer-brand img{ height:70px; width:auto; display:block; margin-bottom:0.5rem; }
+.footer-text{ color:#ffffff; margin:0.35rem 0 0.75rem; line-height:1.45; font-size:0.95rem; }
+
+/* social */
+.footer-social{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:23px;
+  font-weight:600;
+  text-decoration:none;
+  background:#072644;
+  transition: all 0.2s ease;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+/* Brand colors */
+.footer-social .yt{
+  color:#FF0000;
+}
+
+.footer-social .fb{
+  color:#1877F2;
+}
+
+.footer-social .ig{
+  color:#E4405F;
+}
+
+.footer-social .tw{
+  color:#1DA1F2;
+}
+
+/* Hover effect (fills color) */
+.footer-social .yt:hover{
+  background:#FF0000;
+  color:#fff;
+}
+
+.footer-social .fb:hover{
+  background:#1877F2;
+  color:#fff;
+}
+
+.footer-social .ig:hover{
+  background:#E4405F;
+  color:#fff;
+}
+
+.footer-social .tw:hover{
+  background:#1DA1F2;
+  color:#fff;
+}
+
+/* footer links */
+.footer-links .footer-nav{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem; }
+.footer-links a{ color:whitesmoke; text-decoration:none; padding:0.2rem 0; }
+.footer-links a:hover{ color:var(--red); text-decoration:underline; }
+
+/* signup input */
+.footer-signup input[type="email"]{
+  width:100%;
+  padding:0.6rem;
+  border-radius:8px;
+  border:1px solid rgba(12,12,12,0.06);
+  background:#fff;
+  font-size:0.95rem;
+}
+
+
+/* copyright */
+.site-footer .copyright{ margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid rgba(12,20,30,0.03); color: rgba(255, 255, 255, 0.5); font-size:0.9rem; }
+
+/* -------------------------
+   Focus, accessibility helpers
+   ------------------------- */
+a:focus, button:focus, input:focus, select:focus {
+  outline: 3px solid rgba(7,38,68,0.12);
+  outline-offset:3px;
+  border-radius:8px;
+}
+.visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* -------------------------
+   Minor visual polish
+   ------------------------- */
+h2,h3,h4{color:var(--text)}
+p{color:var(--muted)}
+.small{font-size:0.95rem}
+.section-header .titles{ font-size:28px; font-weight:700; color:var(--text); margin-bottom:6px; }
+
+@media (max-width:960px){
+  .levels-grid{grid-template-columns:repeat(2,1fr)}
+  .crash-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .competitive-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .levels-grid{grid-template-columns:1fr}
+  .crash-grid{grid-template-columns:1fr}
+  .hero-card{order:2}
+  .enrol-form .form-row{flex-direction:column}
+}
+
+/* focus states */
+a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0.12);outline-offset:3px}
+
+/* End of courses.css */

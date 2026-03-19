@@ -1,0 +1,550 @@
+
+:root{
+  --nav-blue: #072644;    /* deep navy brand color */
+  --red: #c8292b;         /* accent / CTA red */
+  --bg: #ffffff;          /* page background */
+  --card: #8fb4c92b;        /* card bg */
+  --muted: #44505a;       /* muted paragraph color */
+  --text: #0b1b2b;        /* primary body text */
+  --maxw: 1180px;
+  --card-radius: 12px;
+  --shadow-1: 0 6px 20px rgba(10, 25, 45, 0.06);
+  --shadow-2: 0 10px 40px rgba(7, 20, 40, 0.08);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  box-sizing: border-box;
+}
+
+/* Reset + base */
+*{box-sizing:inherit}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-size:16px;
+}
+
+/* Utility container */
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+
+/*upper header*/
+
+.top-bar{
+  background:#0a2f53;
+  color:#fff;
+  width:100%;
+  padding:20px 20px;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+.top-bar-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.top-item a{text-decoration: none; color: #ffffff;}
+
+.top-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:22px;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.top-item strong{
+  font-weight:700;
+}
+
+.dot{
+  color:#ff5a4d;
+  font-size:22px;
+  line-height:1;
+  margin-right:2px;
+}
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  margin-left:8px;
+  font-size:16px;
+  border:1px solid rgba(255,255,255,0.25);
+  transition:0.2s ease;
+}
+
+.social a:hover{
+  background:#fff;
+  color:#000;
+}
+/* -------------------------
+   HEADER / NAV
+   ------------------------- */
+.site-header{
+  background-color:#072644;
+  border-bottom:1px solid rgba(12,20,30,0.06);
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.header-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:14px 0;
+}
+.brand{display:flex;align-items:center;gap:0.65rem;text-decoration:none}
+.logo{height:70px;width:auto;display:block}
+.brand-text{
+  font-weight:800;
+  font-size:1.05rem;
+  color:var(--nav-blue);
+  letter-spacing:0.2px;
+}
+
+/* main nav */
+.main-nav ul{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.main-nav a{
+  display:inline-block;
+  padding:0.55rem 0.9rem;
+  border-radius:10px;
+  color:white;
+  font-weight:300;
+  font-size: larger;
+  transition: all .15s ease;
+  text-decoration: none;
+}
+.main-nav a:hover{
+  background:rgba(251, 134, 134, 0.481);
+  transform:translateY(-1px);
+}
+.main-nav .active{
+  background:var(--nav-blue);
+  color:#fff;
+  padding:0.45rem 0.85rem;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(7,38,68,0.12);
+}
+
+/* -------------------------
+   HERO
+   ------------------------- */
+.hero{
+  display:grid;
+   grid-template-columns: 1fr min(570px, 100%);
+  gap:2rem;
+  align-items:center;
+  padding:3rem 0;
+}
+.hero-left h2{
+  font-size:2rem;
+  margin:0 0 0.6rem;
+  color:var(--text);
+  line-height:1.12;
+}
+.hero-left p{
+  color:var(--muted);
+  margin:0 0 0.25rem;
+  font-size:1rem;
+}
+.cta-row{display:flex;gap:0.75rem;flex-wrap:wrap}
+
+/* buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+  background:var(--red);
+  color:#fff;
+  padding:0.65rem 1.05rem;
+  border-radius:10px;
+  font-weight:700;
+  border:0;
+  cursor:pointer;
+  box-shadow:0 8px 30px rgba(200,40,40,0.08);
+  transition: transform .16s ease, box-shadow .16s ease;
+  text-decoration:none;
+}
+.btn:hover{ transform: translateY(-3px); box-shadow:var(--shadow-2) }
+.btn.ghost{
+  background:transparent;
+  color:var(--nav-blue);
+  border:1px solid rgba(7,38,68,0.08);
+  box-shadow:none;
+}
+
+/* hero right: video / visual card */
+.hero-right{
+  background: linear-gradient(180deg, rgba(8,113,212,0.06), rgba(5,76,126,0.04));
+  padding: 1rem;
+  border-radius: var(--card-radius);
+  width:570px;
+  max-width: 640px;
+  height: auto;
+  box-shadow: var(--shadow-1);
+
+  overflow: hidden;          /* 🔥 IMPORTANT */
+  display: flex;
+}
+
+.hero-right video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* -------------------------
+   OWNERS / TEACHERS CARDS
+   ------------------------- */
+.owners-section{padding:1.6rem 0}
+.owners-section h2{font-size:1.45rem;margin:0 0.25rem 0.35rem;color:var(--text)}
+.owners-section .small{color:var(--muted);margin-bottom:0.8rem}
+
+/* owners grid */
+.owners-grid{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1rem;
+}
+.owner-card{
+  background:var(--card);
+  border-radius:var(--card-radius);
+  padding:14px;
+  border:1px solid rgba(12,20,30,0.04);
+  display:flex;
+  gap:14px;
+  align-items:center;
+  min-width:260px;
+  flex:1 1 320px;
+  box-shadow:var(--shadow-1);
+}
+.owner-photo{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:10px;
+  border:4px solid rgba(200,40,40,0.06);
+}
+.owner-name{margin:0;font-size:1.05rem;color:var(--nav-blue);font-weight:700}
+.owner-role{margin:0.15rem 0;color:var(--red);font-weight:700;font-size:0.92rem}
+.owner-bio{margin:0;font-size:0.95rem;color:var(--muted)}
+.director-profile{width: 336px;}
+
+
+/* ---------- TESTIMONIALS / SWIPER FIXES ---------- */
+/* Ensure swiper container and slides center the testimonial card */
+.testimonials {
+  padding: 48px 0;
+  position: relative;
+}
+.swiper, .swiper-container {
+  width: 100%;
+}
+.swiper-wrapper {
+  align-items: stretch; /* so cards expand equally */
+  display: flex;
+}
+
+/* Make each slide a flex item centered horizontally */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding: 12px 8px;
+  box-sizing: border-box;
+}
+
+/* The testimonial card itself */
+.testimonials-item {
+  width: 100%;
+  max-width: 720px;                 /* keep a generous reading measure */
+  min-height: 160px;
+  background: var(--card);
+  padding: 22px;
+  border-radius: 18px;
+  box-shadow: var(--shadow-2);
+  border:1px solid rgba(12,20,30,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  box-sizing:border-box;
+  margin: 0 auto;
+}
+
+/* testimonial internal layout */
+.testimonials-item .info {
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.testimonials-item img {
+  width:72px;
+  height:72px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid rgba(7,38,68,0.04);
+}
+
+.testimonials .rating {color: gold;}
+
+/* rating and text */
+.testimonials-item p { color:var(--muted); margin:0; font-size:0.98rem; line-height:1.5 }
+
+/* Swiper pagination bullets: larger, high-contrast */
+.swiper-pagination {
+  margin-top: 18px;
+  display:flex;
+  justify-content:center;
+  gap:8px;
+}
+.swiper-pagination-bullet {
+  width:10px;
+  height:10px;
+  background: rgba(7,38,68,0.14);
+  opacity:1;
+  border-radius:999px;
+  transition: transform .12s cubic-bezier(.2,.9,.2,1), background .12s;
+}
+.swiper-pagination-bullet-active {
+  background: var(--nav-blue);
+  transform: scale(1.25);
+}
+
+/* Swiper navigation arrows (if used) */
+.swiper-button-next, .swiper-button-prev {
+  color: var(--nav-blue);
+  width:44px; height:44px;
+  background: var(--card);
+  border-radius:10px;
+  border:1px solid rgba(12,20,30,0.06);
+  box-shadow: var(--shadow-1);
+  display:flex; align-items:center; justify-content:center;
+}
+.swiper-button-next::after, .swiper-button-prev::after {
+  font-size:16px;
+  color:var(--nav-blue);
+}
+
+/* On narrow screens make testimonials full width */
+@media (max-width: 900px) {
+  .testimonials-item { max-width: 100%; padding:18px; border-radius:12px; }
+  main { width: 94%; height: 320px; }
+  .slide .caption { left: 1rem; right:1rem; bottom:1rem; max-width: unset; }
+  .nav { bottom:10px; gap:8px; }
+}
+
+
+
+/* simple pagination spacing */
+.js-testimonials-pagination{ margin-top:18px; text-align:center; }
+
+/* -------------------------
+   CALLBACK / ENQUIRY
+   ------------------------- */
+.callback{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start;padding:1.25rem 0}
+.call-left{
+  padding:1.25rem;
+  background:linear-gradient(90deg, rgba(61,131,236,0.1), rgba(6,74,191,0.06));
+  border-radius:12px;
+  box-shadow:var(--shadow-1);
+}
+.call-left h4{margin:0;color:var(--text)}
+.call-left p{color:var(--nav-blue);font-size:1.2rem;margin:0.5rem 0}
+.call-left .note{color:var(--muted)}
+
+form.enquiry{
+  padding:1.25rem;
+  background: linear-gradient(180deg, rgba(212,8,8,0.07), rgba(126,5,5,0.03));
+  border-radius:12px;
+  box-shadow:var(--shadow-1);
+}
+.form-row{display:flex;gap:0.6rem;margin-bottom:0.75rem;align-items:center}
+.form-row input, .form-row select{
+  flex:1;
+  padding:0.65rem;
+  border-radius:10px;
+  border:1px solid rgba(7,12,20,0.06);
+  background:#fff;
+  color:var(--text);
+  font-size:0.95rem;
+}
+.form-row input::placeholder{color:#95a0ab}
+
+/* submit row */
+form.enquiry .btn{ font-weight:800; }
+.note{font-size:0.88rem;color:var(--muted)}
+
+/* -------------------------
+   FOOTER
+   ------------------------- */
+.site-footer{
+  background-color:#072644;
+  margin-top:2.5rem;
+  padding-top:1.5rem;;
+  color:white;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+  align-items:start;
+  padding:1.25rem 0;
+}
+.footer-col { text-align:left; }
+.footer-brand img{ height:70px; width:auto; display:block; margin-bottom:0.5rem; }
+.footer-text{ color:#ffffff; margin:0.35rem 0 0.75rem; line-height:1.45; font-size:0.95rem; }
+
+/* social */
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:23px;
+  font-weight:600;
+  text-decoration:none;
+  background:#072644;
+  transition: all 0.2s ease;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+/* Brand colors */
+.footer-social .yt{
+  color:#FF0000;
+}
+
+.footer-social .fb{
+  color:#1877F2;
+}
+
+.footer-social .ig{
+  color:#E4405F;
+}
+
+.footer-social .tw{
+  color:#1DA1F2;
+}
+
+/* Hover effect (fills color) */
+.footer-social .yt:hover{
+  background:#FF0000;
+  color:#fff;
+}
+
+.footer-social .fb:hover{
+  background:#1877F2;
+  color:#fff;
+}
+
+.footer-social .ig:hover{
+  background:#E4405F;
+  color:#fff;
+}
+
+.footer-social .tw:hover{
+  background:#1DA1F2;
+  color:#fff;
+}
+
+/* footer links */
+.footer-links .footer-nav{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem; }
+.footer-links a{ color:whitesmoke; text-decoration:none; padding:0.2rem 0; }
+.footer-links a:hover{ color:var(--red); text-decoration:underline; }
+
+/* signup input */
+.footer-signup input[type="email"]{
+  width:100%;
+  padding:0.6rem;
+  border-radius:8px;
+  border:1px solid rgba(12,12,12,0.06);
+  background:#fff;
+  font-size:0.95rem;
+}
+
+
+/* copyright */
+.site-footer .copyright{ margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid rgba(12,20,30,0.03); color: rgba(255, 255, 255, 0.5); font-size:0.9rem; }
+
+/* -------------------------
+   Small screens / responsive
+   ------------------------- */
+@media (max-width: 900px) {
+  .hero{grid-template-columns:1fr; padding:1.5rem 0}
+  .hero-right{order:2; max-width:100%}
+  .owners-grid{flex-direction:column}
+  .callback{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .main-nav ul{display:none} /* mobile menu remains unchanged (HTML) */
+  main{ width:100%; height:auto; margin: 1rem auto; box-shadow:none; }
+}
+
+/* -------------------------
+   Focus, accessibility helpers
+   ------------------------- */
+a:focus, button:focus, input:focus, select:focus {
+  outline: 3px solid rgba(7,38,68,0.12);
+  outline-offset:3px;
+  border-radius:8px;
+}
+.visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* -------------------------
+   Minor visual polish
+   ------------------------- */
+h2,h3,h4{color:var(--text)}
+p{color:var(--muted)}
+.small{font-size:0.95rem}
+.section-header .titles{ font-size:28px; font-weight:700; color:var(--text); margin-bottom:6px; }
+
+/* Keep existing slide / main area styling compatible (only visuals) */
+main{
+  width:70%;
+  height:400px;
+  margin: 0 auto 0;
+  box-shadow:0 6px 20px rgba(16,24,40,0.06);
+  overflow:hidden;
+  position:relative;
+  border-radius:12px;
+}
+.slide{ border-radius:12px; }
+.nav{ width:70%; margin:12px auto; display:flex; justify-content:space-between; gap:12px; }
+.nav button{ background:var(--card); border:1px solid rgba(12,20,30,0.06); padding:8px 12px; border-radius:10px; box-shadow:var(--shadow-1) }
+.nav button img{ height:22px; width:auto; display:block }
+
+/* ensure testimonial slider keeps spacing on desktop */
+.swiper .swiper-slide { display:flex; justify-content:center; align-items:stretch; }

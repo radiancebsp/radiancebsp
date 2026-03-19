@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Radiance — Brighter Path To Success</title>
+  <meta name="description" content="CBSE (7-12) + JEE (Mains & Advanced) + NEET coaching — Radiance" />
+  <link rel="stylesheet" href="Style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Font Awesome for stars (optional) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    html,body{margin:0}
+    main{
+      width:70%;
+      height:400px;
+      margin-top:30px;
+      box-shadow:0 0 3px grey;
+      overflow:hidden;
+      position:relative; /* important so absolute slides are inside main */
+      border-radius: 10px;
+    }
+    .slide{
+      position:absolute;
+      top:0px;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      transition: transform 1.7s ease;
+      border-radius: 10px;
+    }
+    .nav{
+      width:70%;
+      align-items: center;
+      margin:12px auto;
+      display:flex;
+      justify-content:space-between;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="upper-header"><!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-item">
+      <span class="dot">•</span>
+      <strong><a href="tel:+91 9111 355 911"></strong>Call Us: +91 9111 355 911</a>
+    </div>
+
+    <div class="top-item">
+      <span class="dot">•</span>
+      <strong><a href="mailto:radiancecoachingclasses.in@gmail.com"></strong>Email Us: radiancecoachingclasses.in@gmail.com</a>
+    </div>
+
+    <div class="top-item social">
+      <span class="dot">•</span>
+      <strong>Follow Us:</strong>
+      <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/radiance.bsp/" class="ig"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://x.com/Radiance1825" class="tw"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@Radiancebsp" class="yt"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+  </header>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Radiance logo" class="logo">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a class="active" href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <img src="https://picsum.photos/id/236/1000/500" class="slide" alt="">
+    <img src="https://picsum.photos/id/237/1000/500" class="slide" alt="">
+    <img src="https://picsum.photos/id/238/1000/500" class="slide" alt="">
+  </main>
+
+  <div class="nav">
+    <button id="prev"><img src="backward.png"></button>
+    <button id="next"><img src="forward.png"></button>
+  </div>
+
+  <script>
+    // run after DOM (script is at end of body, so it's safe)
+    const slides = document.querySelectorAll('.slide');
+    let counter = 0;
+
+    // place slides side-by-side using left
+    slides.forEach((slide, index) => {
+      slide.style.left = `${index * 100}%`;
+    });
+
+    // update transform to show the current slide
+    const slideImage = () => {
+      slides.forEach(slide => {
+        slide.style.transform = `translateX(-${counter * 100}%)`;
+      });
+    };
+
+    const goPrev = () => {
+      counter--;
+      if (counter < 0) counter = slides.length - 1; // wrap-around
+      slideImage();
+    };
+
+    const goNext = () => {
+      counter++;
+      if (counter >= slides.length) counter = 0; // wrap-around
+      slideImage();
+    };
+
+    // hook buttons (preferred to inline onclick)
+    document.getElementById('prev').addEventListener('click', goPrev);
+    document.getElementById('next').addEventListener('click', goNext);
+
+    // show initial slide
+    slideImage();
+  </script>
+
+  
+
+   
+
+  <section class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <h2>Your Brighter Path to Knowledge, Confidence, and Success.</h2>
+        <p>• Focused batches</p>
+        <p>• Experienced faculty</p>
+        <p>• Personalised doubt support</p>
+        <p>• Regular test series</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">Request Callback</a>
+          <a class="btn ghost" href="courses.html">View Courses</a>
+        </div>
+      </div>
+      <aside class="hero-right">
+        <a href="https://www.youtube.com/watch?v=KeLrdDsJkWo&t=2071s"><video width="500" controls loop>
+          <source src="0311.mp4" type="video/mp4">
+        </video></a>
+      </aside>
+    </section>
+
+     <!-- MEET OUR OWNERS / TEACHERS -->
+
+     <section class="owners-section" aria-labelledby="owners-heading">
+      <h2 id="owners-heading">Directors Says</h2>
+      <p class="small muted">Meet the team steering Radiance forward. (click the cards)</p>
+
+      <div class="owners-grid">
+        <article class="owner-card">
+          <img src="owner1.jpg" alt="Ishan Varghese" class="owner-photo">
+          <div class="owner-body">
+            <h3 class="owner-name">Dr. Ishan Varghese</h3>
+            <p class="owner-role">Head Bio/Chem Faculty</p>
+            <p class="owner-bio small">
+              B.Sc. Forensic Sciences
+            </p>
+            <p class="owner-bio small">
+              Ph.D. in Forensic Sciences
+            </p>
+            <p class="owner-bio small">
+              10+ years of teaching and mentoring neet and jee aspirants.
+            </p>
+          </div>
+        </article>
+
+        <article class="owner-card">
+          <img src="owner2.jpg" alt="Vijay Dewangan" class="owner-photo">
+          <div class="owner-body">
+            <h3 class="owner-name">Mr. Vijay Devangan</h3>
+            <p class="owner-role">Head Mathematics Faculty</p>
+            <p class="owner-bio small">
+              Btech. Electrical Engineering
+            </p>
+            <p class="owner-bio small">
+              Mtech. Electrical Engineering
+            </p>
+            <p class="owner-bio small">
+              9+ years of teaching and mentoring jee aspirants.
+            </p>
+          </div>
+        </article>
+
+        <a href="Rathore Profile.pdf"><article class="owner-card">
+          <img src="SSR.png" class="director-profile">
+        </article></a>
+      </div>
+    </section>
+
+ <section class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="titles">Students review</h2>
+    </div>
+
+    <div class="testimonials-content">
+      <!-- Swiper container -->
+      <div class="swiper testimonials-slider js-testimonials-slider">
+        <div class="swiper-wrapper">
+          <!-- slide 1 -->
+          <div class="swiper-slide testimonials-item">
+            <div class="info">
+              <img src="https://via.placeholder.com/80" alt="avatar">
+              <div class="text-box">
+                <h3 class="name">Anmol Gupta</h3>
+                <span class="job">Student</span>
+              </div>
+            </div>
+            <p style="color: var(--muted);font-size: 14px;">“This coaching institute provides excellent guidance and a very supportive learning environment.
+               The teachers explain concepts clearly and are always ready to help with doubts. Because of their structured approach and regular tests,
+                my confidence and performance in exams improved a lot. ”</p>
+            <div class="rating">
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+          </div>
+
+          <!-- add more slides like above -->
+          <div class="swiper-slide testimonials-item">
+            <div class="info">
+              <img src="https://via.placeholder.com/80" alt="avatar">
+              <div class="text-box">
+                <h3 class="name">Rina</h3>
+                <span class="job">Student</span>
+              </div>
+            </div>
+            <p style="color: var(--muted);font-size: 15px;">Helped improve my math scores a lot.</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+          </div>
+
+           <div class="swiper-slide testimonials-item">
+            <div class="info">
+              <img src="https://via.placeholder.com/80" alt="avatar">
+              <div class="text-box">
+                <h3 class="name">Rina</h3>
+                <span class="job">Student</span>
+              </div>
+            </div>
+            <p style="color: var(--muted);font-size: 15px;">Helped improve my math scores a lot.</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+          </div>
+
+           <div class="swiper-slide testimonials-item">
+            <div class="info">
+              <img src="https://via.placeholder.com/80" alt="avatar">
+              <div class="text-box">
+                <h3 class="name">Rina</h3>
+                <span class="job">Student</span>
+              </div>
+            </div>
+            <p style="color: var(--muted);font-size: 15px;">Helped improve my math scores a lot.</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+          </div>
+
+           <div class="swiper-slide testimonials-item">
+            <div class="info">
+              <img src="https://via.placeholder.com/80" alt="avatar">
+              <div class="text-box">
+                <h3 class="name">Rina</h3>
+                <span class="job">Student</span>
+              </div>
+            </div>
+            <p style="color: var(--muted);font-size: 15px;">Helped improve my math scores a lot.</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+            </div>
+          </div>
+
+          <!-- ... more slides -->
+        </div>
+      </div>
+
+      <!-- pagination -->
+      <div class="swiper-pagination js-testimonials-pagination"></div>
+    </div>
+  </div>
+</section>
+
+    <!-- CALLBACK + ENQUIRY -->
+    <section id="contact">
+      <h3>Request a Callback</h3>
+      <div class="callback">
+        <div class="call-left">
+          <h4>Request a callback or call</h4>
+          <p style="font-size:1.25rem;margin:0.5rem 0;color:var(--white)">+91 9111 355 911</p>
+          <p class="note">Tell us your preferred time and we'll call you back. Office hours: 9:00 — 21:00</p>
+        </div>
+         <form class="enquiry" id="enquiry-form">
+           <div class="form-row">
+             <input id="full-name" name="full_name" placeholder="FULL NAME" required />
+           </div>
+         
+           <div class="form-row">
+             <input id="phone" name="phone" placeholder="MOBILE NUMBER" required />
+           </div>
+         
+           <div class="form-row">
+             <select id="student-class" name="student_class" required>
+               <option value="">Select class</option>
+               <option>7</option>
+               <option>8</option>
+               <option>9</option>
+               <option>10</option>
+               <option>11</option>
+               <option>12</option>
+             </select>
+         
+             <select id="course" name="course" required>
+               <option value="">Select course</option>
+               <option>CBSE (7-12)</option>
+               <option>JEE Mains + Advanced</option>
+               <option>NEET</option>
+               <option>IAT</option>
+               <option>CUET</option>
+             </select>
+           </div>
+         
+           <div style="display:flex;gap:0.5rem;align-items:center">
+             <button class="btn" type="submit">Send Enquiry</button>
+             <div class="note">Or call us: +91 9111 355 911</div>
+           </div>
+         </form>
+      </div>
+    </section>
+
+  </section>
+
+  
+
+  <!-- SITE FOOTER: three stacked sections (columns/rows handled by CSS) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Column 1: logo, about, social links -->
+      <div class="footer-col footer-about" aria-labelledby="footer-about-heading">
+        <h4 id="footer-about-heading" class="visually-hidden">About Radiance</h4>
+        <div class="footer-brand">
+          <a href="sample.html"><img src="logo.png" alt="Radiance logo" /></a>
+        </div>
+        <p class="footer-text">Radiance — Brighter Path To Success. Small batches, expert faculty, and focused mentoring to help you reach your goals.</p>
+        <p class="footer-text">1st Floor, Radiance Coaching Classes, Opposite New Sharee Ram Care Hospital, Ameri Road, Nehru Nagar, Bilaspur-Chhattisgarh-495001, Chhattisgarh</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Radiancebsp" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="yt"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/radiance.bsp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="ig"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/Radiance1825" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="tw"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: quick links + terms -->
+      <div class="footer-col footer-links" aria-labelledby="footer-links-heading">
+        <h4 id="footer-links-heading" style="color: whitesmoke;">Quick links</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="footer-terms" style="margin-top:1rem;">
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+      <!-- Column 3: signup form -->
+      <div class="footer-col footer-signup" aria-labelledby="footer-signup-heading">
+        <h4 id="footer-signup-heading" style="color: whitesmoke;">Stay updated</h4>
+        <p class="footer-text small">Sign up for updates, free materials and trial class invites.</p>
+        <form id="footer-signup-form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="signup-email" class="visually-hidden">Email address</label>
+            <input id="signup-email" name="email" type="email" placeholder="Your email address" required />
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>© <strong>Radiance</strong> — Brighter Path To Success</small>
+    </div>
+  </footer>
+  <!-- Swiper JS (put before your init script) -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<script>
+  // Init after DOM ready
+  document.addEventListener('DOMContentLoaded', function () {
+    const swiper = new Swiper('.js-testimonials-slider', {
+      slidesPerView: 1,       // default
+      grabCursor: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '.js-testimonials-pagination',
+        clickable: true      // <-- fixed typo
+      },
+      breakpoints: {
+        768: { slidesPerView: 2 },   // >=768px show 2
+        1024: { slidesPerView: 3 }   // >=1024px show 3
+      }
+    });
+  });
+</script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

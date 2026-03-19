@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Radiance</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+  :root{
+    --red:#c8292b;
+    --nav-blue:#072644;
+    --accent-yellow:#ffd43b;
+    --bg:#ffffff;
+    --text:#07141a;
+    --muted:#47515a;
+    --radius:12px;
+    --shadow:0 10px 30px rgba(7,12,20,0.06);
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+  .container{max-width:1190px;margin:0 auto;padding:1.25rem}
+  a{color:inherit}
+  .site-header{
+  background:transparent;
+  border-bottom:1px solid rgba(12,20,30,0.06);
+  position:sticky;
+  top:0;
+  z-index:40;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/*upper header*/
+
+.top-bar{
+  background:#0a2f53;
+  color:#fff;
+  width:100%;
+  padding:20px 20px;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+.top-bar-inner{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.top-item a{text-decoration: none; color: #ffffff;}
+
+.top-item{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:22px;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.top-item strong{
+  font-weight:700;
+}
+
+.dot{
+  color:#ff5a4d;
+  font-size:22px;
+  line-height:1;
+  margin-right:2px;
+}
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  margin-left:8px;
+  font-size:16px;
+  border:1px solid rgba(255,255,255,0.25);
+  transition:0.2s ease;
+}
+
+.social a:hover{
+  background:#fff;
+  color:#000;
+}
+
+
+
+.top-social{
+  display:flex;
+  gap:14px;
+  align-items:center;
+}
+
+.top-social a{
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#fff;
+  text-decoration:none;
+}
+
+.top-social a i{
+  font-size:18px;
+  display:block;
+}
+.top-social .fb i{ color:#1877F2 !important; }
+.top-social .ig i{ color:#E4405F !important; }
+.top-social .tw i{ color:#1DA1F2 !important; }
+.top-social .yt i{ color:#FF0000 !important; }
+
+/*header*/
+  .site-header{background-color: #072644; margin-bottom: -8px;}
+  .header-inner{display:flex;align-items:center;justify-content:space-between; }
+  .brand{display:flex;align-items:center;gap:0.5rem}
+  .brand img{height:70px}
+  .brand .brand-text{font-weight:800;color:white}
+  /* main nav */
+.main-nav ul{
+  display:flex;
+  gap:0.5rem;
+  align-items:center;
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.main-nav a{
+  display:inline-block;
+  padding:0.55rem 0.9rem;
+  border-radius:10px;
+  color:white;
+  font-weight:300;
+  font-size: larger;
+  transition: all .15s ease;
+  text-decoration: none;
+}
+.main-nav a:hover{
+  background:rgba(251, 134, 134, 0.481);
+  transform:translateY(-1px);
+}
+.main-nav .active{
+  background:var(--nav-blue);
+  color:#fff;
+  padding:0.45rem 0.85rem;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(7,38,68,0.12);
+}
+
+  /* Page hero */
+  .page-hero{display:grid;grid-template-columns:1fr 420px;gap:1.4rem;align-items:center;padding:2rem 0}
+  .page-hero h1{margin:0;color:var(--nav-blue);font-size:2rem}
+  .page-hero p{margin:0.6rem 0;color:var(--muted)}
+
+  /* layout */
+  .stack{display:grid;grid-template-columns:1fr;gap:1rem;margin-top:1.2rem}
+
+  /* card */
+  .card{background:linear-gradient(180deg, rgba(212,8,8,0.07), rgba(126,5,5,0.03));border-radius:var(--radius);padding:16px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--shadow)}
+  .card h3{margin:0 0 8px;color:var(--nav-blue)}
+  .form-row{display:flex;gap:0.6rem;margin-bottom:0.8rem}
+  .form-row input, .form-row select, .form-row textarea{flex:1;padding:0.68rem;border-radius:10px;border:1px solid rgba(7,12,20,0.06);font-weight:600}
+  textarea{min-height:110px;resize:vertical}
+  .btn{background:var(--red);color:#fff;padding:0.7rem 1rem;border-radius:10px;border:0;font-weight:800;cursor:pointer}
+  .btn:hover{ transform: translateY(-3px); box-shadow:var(--shadow-2) }
+  .btn.ghost{
+  background:transparent;
+  color:var(--nav-blue);
+  border:1px solid rgba(7,38,68,0.08);
+  box-shadow:none;
+}
+  .note{font-size:0.92rem;color:var(--muted)}
+.touch-section{
+  padding: 60px 0 30px;
+}
+
+.touch-container{
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.touch-left h2{
+  font-size: 52px;
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: var(--nav-blue);
+  font-weight: 800;
+}
+
+.touch-desc{
+  max-width: 560px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0 0 28px;
+}
+
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 32px;
+  max-width: 620px;
+}
+
+.contact-item{
+  min-width: 0;
+}
+
+.contact-icon{
+  width: 59px;
+  height: 59px;
+  border: 2px solid #ff5a4d;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+  background: #fff;
+}
+
+.contact-item h3{
+  font-size: 16px;
+  margin: 0 0 6px;
+  color: #111827;
+  font-weight: 800;
+}
+
+.contact-item p{
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.contact-item a{text-decoration: none;}
+.touch-right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.touch-right img{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 900px){
+  .touch-container{
+    grid-template-columns: 1fr;
+  }
+
+  .touch-right{
+    order: -1;
+  }
+
+  .touch-left h2{
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 600px){
+  .contact-grid{
+    grid-template-columns: 1fr;
+  }
+
+  .touch-left h2{
+    font-size: 34px;
+  }
+}
+  /* quick contact box */
+  .quick-contact{display:flex;flex-direction:column;gap:0.6rem}
+  .quick-item{display:flex;gap:10px;align-items:center}
+  .quick-item strong{min-width:86px;color:var(--nav-blue)}
+  .extra-note{
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.extra-note textarea{
+  width: 100%;
+  min-width: 100%;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 15px;
+  border-style: none;
+}
+
+  /* -------------------------
+   FOOTER
+   ------------------------- */
+.site-footer{
+  background-color:#072644;
+  margin-top:2.5rem;
+  padding-top:1.5rem;;
+  color:white;
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:1.25rem;
+  align-items:start;
+  padding:1.25rem 0;
+}
+.footer-col { text-align:left; }
+.footer-brand img{ height:70px; width:auto; display:block; margin-bottom:0.5rem; }
+.footer-text{ color:#ffffff; margin:0.35rem 0 0.75rem; line-height:1.45; font-size:0.95rem; }
+
+/* social */
+.footer-social{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.footer-social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:6px 12px;
+  border-radius:8px;
+  font-size:23px;
+  font-weight:600;
+  text-decoration:none;
+  background:#072644;
+  transition: all 0.2s ease;
+  border:1px solid rgba(0,0,0,0.05);
+}
+
+/* Brand colors */
+.footer-social .yt{
+  color:#FF0000;
+}
+
+.footer-social .fb{
+  color:#1877F2;
+}
+
+.footer-social .ig{
+  color:#E4405F;
+}
+
+.footer-social .tw{
+  color:#1DA1F2;
+}
+
+/* Hover effect (fills color) */
+.footer-social .yt:hover{
+  background:#FF0000;
+  color:#fff;
+}
+
+.footer-social .fb:hover{
+  background:#1877F2;
+  color:#fff;
+}
+
+.footer-social .ig:hover{
+  background:#E4405F;
+  color:#fff;
+}
+
+.footer-social .tw:hover{
+  background:#1DA1F2;
+  color:#fff;
+}
+
+/* footer links */
+.footer-links .footer-nav{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:0.5rem; }
+.footer-links a{ color:whitesmoke; text-decoration:none; padding:0.2rem 0; }
+.footer-links a:hover{ color:var(--red); text-decoration:underline; }
+
+/* signup input */
+.footer-signup input[type="email"]{
+  width:100%;
+  padding:0.6rem;
+  border-radius:8px;
+  border:1px solid rgba(12,12,12,0.06);
+  background:#fff;
+  font-size:0.95rem;
+}
+
+
+/* copyright */
+.site-footer .copyright{ margin-top:0.5rem; padding-top:0.75rem; border-top:1px solid rgba(12,20,30,0.03); color: rgba(255, 255, 255, 0.5); font-size:0.9rem; }
+
+/* -------------------------
+   Focus, accessibility helpers
+   ------------------------- */
+a:focus, button:focus, input:focus, select:focus {
+  outline: 3px solid rgba(7,38,68,0.12);
+  outline-offset:3px;
+  border-radius:8px;
+}
+.visually-hidden{ position:absolute !important; height:1px; width:1px; overflow:hidden; clip:rect(1px,1px,1px,1px); white-space:nowrap; }
+
+/* -------------------------
+   Minor visual polish
+   ------------------------- */
+h2,h3,h4{color:var(--text)}
+p{color:var(--muted)}
+.small{font-size:0.95rem}
+.section-header .titles{ font-size:28px; font-weight:700; color:var(--text); margin-bottom:6px; }
+
+  /* small screens */
+  @media (max-width:920px){
+    .page-hero{grid-template-columns:1fr;gap:0.8rem}
+    .directors-row{flex-direction:column}
+  }
+
+  /* focus */
+  a:focus,button:focus,input:focus,select:focus,textarea:focus{outline:3px solid rgba(1,118,168,0.12);outline-offset:3px}
+  </style>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<body>
+  <header class="upper-header"><!-- Top Bar -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-item">
+      <span class="dot">•</span>
+      <strong><a href="tel:+91 9111 355 911"></strong>Call Us: +91 9111 355 911</a>
+    </div>
+
+    <div class="top-item">
+      <span class="dot">•</span>
+      <strong><a href="mailto:radiancecoachingclasses.in@gmail.com"></strong>Email Us: radiancecoachingclasses.in@gmail.com</a>
+    </div>
+
+    <div class="top-item social">
+      <span class="dot">•</span>
+      <strong>Follow Us:</strong>
+      <a href="#" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/radiance.bsp/" class="ig"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://x.com/Radiance1825" class="tw"><i class="fa-brands fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@Radiancebsp" class="yt"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+  </header>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Radiance logo">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ <main class="container">
+  <section class="touch-section">
+    <div class="touch-container">
+      <div class="touch-left">
+        <h2>Be in Touch</h2>
+
+        <p class="touch-desc">Have questions or want a callback? Use the buttons below to request a callback and find our directors above for direct contact.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <a href="tel:+91 9111 355 911"><div class="contact-icon">📞</div></a>
+            <h3>Phone number</h3>
+            <p>+91 9111 355 911</p>
+            <p>+91 93405 59092</p>
+            <p>+91 90395 80985</p>
+          </div>
+
+          <div class="contact-item">
+            <a href="mailto:radiancecoachingclasses.in@gmail.com"><div class="contact-icon">✉️</div></a>
+            <h3>Email</h3>
+            <p>radiancecoachingclasses.in@gmail.com</p>
+          </div>
+
+          <div class="contact-item">
+            <a href="https://www.google.com/maps/place/RADIANCE+Coaching+Classes/@22.0853143,82.1278356,809m/data=!3m3!1e3!4b1!5s0x3a280b7d28625cab:0xf0954b1642ee779e!4m6!3m5!1s0x3a280b5adc968aab:0xfb372ccc82ad4875!8m2!3d22.0853143!4d82.1304105!16s%2Fg%2F11vm5xkpgs?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D"> <div class="contact-icon">📍</div> </a>
+            <h3>Address</h3>
+            <p>1st Floor, Radiance Coaching Classes, Opposite New Sharee Ram Care Hospital, Ameri Road, Nehru Nagar, Bilaspur-Chhattisgarh-495001, Chhattisgarh</p>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">⏰</div>
+            <h3>Working hours</h3>
+            <p>Mon - Sat: 9:00 - 21:00</p>
+            <p>Sunday: Day Off</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="touch-right">
+        <img src="student.png" alt="Contact illustration">
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-top:18px" class="card" aria-labelledby="callback-h">
+    <h3 id="callback-h">Request a Callback</h3>
+    <p class="note">Tell us a little about when you'd like us to call — we'll reply within one working day.</p>
+
+    <form id="callback-form" action="https://formsubmit.co/radiancecoachingclasses.in@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New callback request from website">
+
+      <div class="form-row">
+        <input type="text" name="name" placeholder="Your full name" required>
+        <input type="tel" name="phone" placeholder="Phone number (+91...)" required>
+      </div>
+
+      <div class="form-row">
+        <select name="best_time">
+          <option value="morning">Morning (8–11 AM)</option>
+          <option value="afternoon">Afternoon (12–4 PM)</option>
+          <option value="evening">Evening (5–8 PM)</option>
+        </select>
+        <input type="text" name="course_interest" placeholder="Course of interest (optional)">
+      </div>
+
+      <div style="margin-bottom:0.8rem" class="extra-note">
+        <textarea name="message" placeholder="Any note we should know (optional)"></textarea>
+      </div>
+
+      <div style="display:flex;gap:0.6rem;align-items:center">
+        <button type="submit" class="btn">Request callback</button>
+        <div id="callback-status" class="note" aria-live="polite"></div>
+      </div>
+    </form>
+  </section>
+
+  <section style="margin-top:1.2rem">
+    <p class="note">Prefer email? Write to <a href="mailto:radiancecoachingclasses.in@gmail.com">radiancecoachingclasses.in@gmail.com</a> or call <a href="tel:+919111355911">+91 9111 355 911</a>.</p>
+  </section>
+</main>
+
+  <!-- SITE FOOTER: three stacked sections (columns/rows handled by CSS) -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Column 1: logo, about, social links -->
+      <div class="footer-col footer-about" aria-labelledby="footer-about-heading">
+        <h4 id="footer-about-heading" class="visually-hidden">About Radiance</h4>
+        <div class="footer-brand">
+          <a href="sample.html"><img src="logo.png" alt="Radiance logo" /></a>
+        </div>
+        <p class="footer-text">Radiance — Brighter Path To Success. Small batches, expert faculty, and focused mentoring to help you reach your goals.</p>
+        <p class="footer-text">1st Floor, Radiance Coaching Classes, Opposite New Sharee Ram Care Hospital, Ameri Road, Nehru Nagar, Bilaspur-Chhattisgarh-495001, Chhattisgarh</p>
+        <div class="footer-social">
+          <a href="https://www.youtube.com/@Radiancebsp" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="yt"><i class="fa-brands fa-youtube"></i></a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="fb"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/radiance.bsp/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="ig"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/Radiance1825" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="tw"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <!-- Column 2: quick links + terms -->
+      <div class="footer-col footer-links" aria-labelledby="footer-links-heading">
+        <h4 id="footer-links-heading" style="color: whitesmoke;">Quick links</h4>
+        <ul class="footer-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="courses.html">Courses</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="footer-terms" style="margin-top:1rem;">
+          <a href="terms.html">Terms &amp; Conditions</a>
+        </div>
+      </div>
+
+      <!-- Column 3: signup form -->
+      <div class="footer-col footer-signup" aria-labelledby="footer-signup-heading">
+        <h4 id="footer-signup-heading" style="color: whitesmoke;">Stay updated</h4>
+        <p class="footer-text small">Sign up for updates, free materials and trial class invites.</p>
+        <form id="footer-signup-form" action="#" method="post" novalidate>
+          <div class="form-row">
+            <label for="signup-email" class="visually-hidden">Email address</label>
+            <input id="signup-email" name="email" type="email" placeholder="Your email address" required />
+          </div>
+          <div class="form-row">
+            <button type="submit" class="btn">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container copyright">
+      <small>© <strong>Radiance</strong> — Brighter Path To Success</small>
+    </div>
+  </footer>
+
+  <script>
+    // set footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // simple handler for the callback form — doesn't send data, just simulates success
+    (function(){
+      const form = document.getElementById('callback-form');
+      const status = document.getElementById('callback-status');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const name = form.elements['name'].value.trim();
+        const phone = form.elements['phone'].value.trim();
+        if(!name || !phone){
+          status.textContent = 'Please enter name and phone.';
+          status.style.color = 'var(--red)';
+          return;
+        }
+        status.style.color = 'var(--muted)';
+        status.textContent = 'Requesting callback...';
+        // fake delay to mimic network
+        setTimeout(()=>{
+          status.style.color = 'green';
+          status.textContent = 'Thanks! We will call you within one working day.';
+          form.reset();
+        }, 900);
+      });
+    })();
+  </script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
