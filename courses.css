@@ -171,7 +171,7 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 420px;gap:1.6rem;align-items:center;padding:2.2rem 0}
-.hero-content h1{font-size:2rem;margin:0 0 0.5rem;color:var(--nav-blue)}
+.hero-content h1{font-size:3rem;margin:0 0 0.5rem;color:var(--nav-blue)}
 .lead{color:var(--muted);margin:0 0 0.75rem}
 .cta-row{display:flex;gap:0.75rem}
 .btn{background:var(--red);color:#fff;padding:0.72rem 1.1rem;border-radius:10px;font-weight:800;border:0;cursor:pointer;text-decoration: none;}
@@ -188,11 +188,11 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 .hero-card img{width:100%;height:auto;border-radius:8px;display:block}
 
 /* Levels grid */
-.levels-section{padding:1.6rem 0}
+.levels-section{padding:1.6rem 0;}
 .levels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
 .level-card{background:#aee98053;border-radius:12px;padding:16px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow);display:flex;flex-direction:column;gap:12px}
 .level-head{display:flex;justify-content:space-between;align-items:center}
-.level-head h3{margin:0;color:var(--nav-blue)}
+.level-head h3{margin:0;color:var(--nav-blue); font-size: 1.45rem;}
 .badge{background:rgba(200,40,40,0.08);color:var(--red);padding:6px 10px;border-radius:999px;font-weight:700}
 .badge.accent{background:linear-gradient(90deg, rgba(1,118,168,0.06), rgba(7,38,68,0.03));color:var(--nav-blue)}
 .features-list{margin:6px 0 0 18px;color:var(--muted)}
@@ -209,30 +209,31 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 .competitive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
 .comp-card{background:#76afd559;border-radius:12px;padding:14px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow)}
 
-/*Enroll*/
+/* -----------------------
+   ENROLL SECTION
+------------------------ */
 .Enroll-section{
-  padding: 1.6rem 0;
+  padding: clamp(1.5rem, 3vw, 3rem) 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, rgba(1,118,168,0.02), rgba(255,255,255,0));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255,255,255,0));
 }
 
 .Enroll-card{
-  width: 100%;
-  max-width: 880px;
-  background: linear-gradient(180deg, rgba(212,8,8,0.07), rgba(126,5,5,0.03));
-  border-radius: var(--radius);
-  padding: 1.75rem; /* ~28px */
-  box-shadow: var(--card-shadow);
-  border: 1px solid rgba(7,12,20,0.04);
+  width: min(880px, calc(100% - 24px));
+  background: linear-gradient(180deg, rgba(250, 228, 228, 0.649), rgba(247, 219, 219, 0.616));
+  border-radius: 24px;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  box-shadow: 0 18px 45px rgba(12, 20, 31, 0.08);
+  border: 1px solid rgba(7,12,20,0.06);
   box-sizing: border-box;
 }
 
-/* heading + description */
 .Enroll-card h3{
   margin: 0 0 0.35rem 0;
-  font-size: 1.45rem;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  line-height: 1.2;
   color: var(--nav-blue);
   letter-spacing: -0.2px;
   font-weight: 800;
@@ -240,77 +241,89 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 
 .Enroll-card p.small.muted{
   margin: 0 0 1rem 0;
-  font-size: 0.95rem;
+  font-size: 0.96rem;
   color: var(--muted);
+  line-height: 1.5;
 }
 
-/* form shell */
 .Enroll-form{
   width: 100%;
+  display: grid;
+  gap: 0.9rem;
 }
 
-/* rows: horizontal on desktop, stacked on mobile */
 .Enroll-form .form-row{
   display: flex;
-  gap: 0.75rem;
-  align-items: center;
-  margin-bottom: 0.75rem;
+  gap: 0.9rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 0;
 }
 
-/* make flex children behave (prevents overflow) */
 .Enroll-form .form-row > *{
-  flex: 1 1 auto;
+  flex: 1 1 220px;
   min-width: 0;
   font-family: inherit;
 }
 
-/* inputs & select */
-.Enroll-form input[type="text"],
-.Enroll-form input[type="email"],
+.Enroll-form input,
 .Enroll-form select{
-  height: 48px;
-  padding: 0.6rem 0.85rem;
-  border-radius: calc(var(--radius) - 2px);
-  border: 1px solid rgba(7,12,20,0.06);
+  width: 100%;
+  height: 50px;
+  padding: 0.7rem 0.9rem;
+  border-radius: 16px;
+  border: 1px solid rgba(7,12,20,0.08);
   background: #fff;
   font-size: 0.98rem;
   color: var(--text);
   outline: none;
-  transition: box-shadow .15s ease, border-color .12s ease, transform .06s ease;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .12s ease, background-color .15s ease;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
 }
 
-/* select caret (subtle) */
+.Enroll-form input::placeholder{
+  color: #9aa3af;
+}
+
 .Enroll-form select{
-  padding-right: 2.4rem;
+  padding-right: 2.5rem;
   background-image:
     linear-gradient(45deg, transparent 50%, rgba(71,81,90,0.85) 50%),
     linear-gradient(135deg, rgba(71,81,90,0.85) 50%, transparent 50%);
-  background-position: calc(100% - 14px) calc(50% - 1px), calc(100% - 8px) calc(50% - 1px);
+  background-position: calc(100% - 16px) calc(50% - 1px), calc(100% - 10px) calc(50% - 1px);
   background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
 }
 
-/* placeholder */
-.Enroll-form input::placeholder{ color: #98a0ab; }
-
-/* focus / keyboard-visible focus (keeps Radiance outline feel) */
 .Enroll-form input:focus,
 .Enroll-form select:focus{
   border-color: var(--red);
-  box-shadow: 0 8px 24px rgba(1,118,168,0.06);
+  box-shadow: 0 0 0 4px rgba(212, 8, 8, 0.10);
   transform: translateY(-1px);
 }
 
-/* request button (red, bold) */
+.Enroll-form input:focus-visible,
+.Enroll-form select:focus-visible,
+.Enroll-form .btn:focus-visible{
+  outline: none;
+}
+
+.Enroll-form > div:last-child{
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 0.1rem;
+}
+
 .Enroll-form .btn{
   flex: 0 0 auto;
-  height: 48px;
-  min-width: 140px;
+  height: 50px;
+  min-width: 160px;
   padding: 0 1.25rem;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: 16px;
   border: 0;
   background: var(--red);
   color: #fff;
@@ -320,17 +333,60 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(200,40,40,0.12);
-  transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+  box-shadow: 0 10px 24px rgba(200,40,40,0.14);
+  transition: transform .15s ease, background .15s ease, box-shadow .15s ease, opacity .15s ease;
 }
 
-/* hover / active / focus */
 .Enroll-form .btn:hover{
   background: rgba(200,40,40,0.95);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(200,40,40,0.18);
 }
-.Enroll-form .btn:active{ transform: translateY(0); }
-.Enroll-form .btn:focus{ outline: 3px solid rgba(1,118,168,0.12); outline-offset: 3px; }
+
+.Enroll-form .btn:active{
+  transform: translateY(0);
+}
+
+.note{
+  font-size: 0.92rem;
+  color: var(--muted);
+  background: rgba(1,118,168,0.05);
+  border: 1px solid rgba(1,118,168,0.08);
+  padding: 0.75rem 0.9rem;
+  border-radius: 14px;
+  line-height: 1.35;
+}
+
+/* Mobile */
+@media (max-width: 640px){
+  .Enroll-card{
+    border-radius: 20px;
+    padding: 1rem;
+  }
+
+  .Enroll-form .form-row{
+    flex-direction: column;
+  }
+
+  .Enroll-form .form-row > *{
+    flex: 1 1 auto;
+  }
+
+  .Enroll-form > div:last-child{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Enroll-form .btn{
+    width: 100%;
+    min-width: 0;
+  }
+
+  .note{
+    width: 100%;
+    text-align: center;
+  }
+}
 
 /* stacked / mobile */
 @media (max-width: 640px){
