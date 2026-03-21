@@ -335,6 +335,10 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
   color:#1DA1F2;
 }
 
+.footer-social .wp {
+  color: #25D366;
+}
+
 /* Hover effect (fills color) */
 .footer-social .yt:hover{
   background:#FF0000;
@@ -354,6 +358,11 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 .footer-social .tw:hover{
   background:#1DA1F2;
   color:#fff;
+}
+
+.footer-social .wp:hover{
+  background: #25D366;
+  color: #fff;
 }
 
 /* footer links */
