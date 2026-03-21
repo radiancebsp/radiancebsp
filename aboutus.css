@@ -174,8 +174,8 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 .lead{color:var(--muted);margin:0 0 0.75rem;font-size:1rem}
 .mission{margin:0.6rem 0;color:var(--muted);font-size:0.98rem}
 
-.hero-card .card-visual{background:linear-gradient(180deg, rgba(7,38,68,0.03), rgba(7,38,68,0.01));border-radius:var(--radius);padding:8px;box-shadow:var(--card-shadow);display:flex;align-items:center;justify-content:center}
-.hero-card img{width:100%;height:auto;display:block;border-radius:8px;object-fit:cover}
+.hero-card .card-visual{background:linear-gradient(180deg, rgba(7,38,68,0.03), rgba(7,38,68,0.01));border-radius:28px;padding:8px;box-shadow:var(--card-shadow);display:flex;align-items:center;justify-content:center}
+.hero-card img{width:100%;height:auto;display:block;border-radius:28px;object-fit:cover}
 
 /* Owners */
 .owners-section{padding:1.6rem 0}
@@ -190,17 +190,98 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 /* stats */
 .stats-section{padding:1.6rem 0;}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:1rem}
-.stat{background:linear-gradient(180deg, rgba(114, 182, 237, 0.312), rgba(96, 133, 163, 0.186));padding:18px;border-radius:12px;text-align:center;border:1px solid rgba(7,12,20,0.03);box-shadow:var(--card-shadow)}
+.stat{background:linear-gradient(180deg, rgba(114, 147, 237, 0.312), rgba(96, 116, 163, 0.186));padding:18px;border-radius:12px;text-align:center;border:1px solid rgba(7,12,20,0.03);box-shadow:var(--card-shadow)}
 .stat-value{font-size:2rem;font-weight:800;color:var(--nav-blue)}
 .stat-label{font-size:0.95rem;color:var(--muted);margin-top:6px}
 
 /* Why choose us */
-.why-section{padding:1.6rem 0}
-.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
-.why-item{background:#e93c1136;border-radius:12px;padding:16px;display:flex;gap:12px;align-items:flex-start;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow)}
-.why-icon{flex:0 0 48px;color:var(--red)}
-.why-item h3{margin:0;font-size:1.02rem;color:var(--nav-blue)}
-.why-item p{margin:6px 0 0;color:var(--muted);font-size:0.95rem}
+/* WHY SECTION */
+#why{
+  padding: 0px 0px;
+  background: #fff;
+}
+
+#why h3{
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #111;
+}
+
+/* each row */
+.why-grid{
+  max-width: 1800px;
+  margin: 0 auto 35px auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* text box */
+.why-text{
+  background: #500be443;
+  padding: 68px 30px;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.why-text h4{
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #111;
+  font-weight: 800;
+}
+
+.why-text p{
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* image box */
+.why-photo{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* Alternate layout automatically */
+.why-grid:nth-child(even){
+  direction: rtl;
+}
+
+.why-grid:nth-child(even) .why-text,
+.why-grid:nth-child(even) .why-photo{
+  direction: ltr;
+}
+
+/* Responsive */
+@media (max-width: 768px){
+  .why-grid{
+    grid-template-columns: 1fr;
+    gap: 18px;
+    text-align: center;
+  }
+
+  .why-grid:nth-child(even){
+    direction: ltr;
+  }
+
+  .why-photo{
+    max-width: 320px;
+  }
+
+  .why-text{
+    padding: 22px;
+  }
+}
 
 /* -------------------------
    FOOTER
@@ -335,4 +416,192 @@ p{color:var(--muted)}
   .main-nav ul{display:flex;gap:0.5rem;flex-wrap:wrap}
   .stats-grid{grid-template-columns:1fr}
   .hero-card{order:2}
+}
+
+
+
+
+/* =========================
+   MOBILE OVERRIDES ONLY
+   Append at the bottom
+   ========================= */
+
+@media (max-width: 768px) {
+  .top-bar {
+    padding: 10px 12px;
+  }
+
+  .top-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .top-item {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.4;
+  }
+
+  .social a {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
+  }
+
+  .logo {
+    height: 54px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.25rem 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .hero-content,
+  .mission,
+  .lead {
+    text-align: left;
+  }
+
+  .hero-card {
+    order: -1;
+  }
+
+  .owners-grid {
+    flex-direction: column;
+  }
+
+  .owner-card {
+    flex-direction: column;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .owner-photo {
+    width: 120px;
+    height: 120px;
+  }
+
+  .director-profile {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 12px 0;
+    margin-bottom: 20px;
+    direction: ltr;
+  }
+
+  .why-text {
+    padding: 18px;
+  }
+
+  .why-text h4 {
+    font-size: 1.15rem;
+  }
+
+  .why-text p {
+    font-size: 1rem;
+    line-height: 1.55;
+  }
+
+  .why-photo {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .footer-col {
+    text-align: center;
+  }
+
+  .footer-brand img {
+    margin: 0 auto 0.5rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-links .footer-nav {
+    align-items: center;
+  }
+
+  .footer-signup input[type="email"] {
+    max-width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .lead,
+  .mission {
+    font-size: 0.95rem;
+  }
+
+  .stat-value {
+    font-size: 1.7rem;
+  }
+
+  #why h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+
+  .why-text {
+    padding: 16px;
+  }
+
+  .footer-text,
+  .footer-links a,
+  .copyright small {
+    font-size: 0.9rem;
+  }
 }

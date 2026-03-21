@@ -209,6 +209,9 @@ html,body{margin:0;padding:0;background:var(--bg);color:var(--text);line-height:
 .competitive-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:1rem}
 .comp-card{background:#76afd559;border-radius:12px;padding:14px;border:1px solid rgba(7,12,20,0.04);box-shadow:var(--card-shadow)}
 
+/*dropper*/
+.dropper{background: #c5bc0f44;}
+
 /* -----------------------
    ENROLL SECTION
 ------------------------ */
@@ -531,3 +534,233 @@ p{color:var(--muted)}
 a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0.12);outline-offset:3px}
 
 /* End of courses.css */
+
+
+/* =========================================================
+   ANDROID / MOBILE PATCH
+   Paste this at the VERY END of courses.css
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  /* Top bar */
+  .top-bar {
+    padding: 12px 12px;
+  }
+
+  .top-bar-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .top-item {
+    font-size: 14px;
+    white-space: normal;
+    line-height: 1.45;
+  }
+
+  .social a {
+    width: 26px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  /* Header */
+  .header-inner {
+    padding: 10px 0;
+  }
+
+  .logo {
+    height: 54px;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    justify-content: flex-end;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
+  }
+
+  /* Hero */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1.4rem 0;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.15;
+  }
+
+  .lead {
+    font-size: 0.98rem;
+  }
+
+  .cta-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-card {
+    order: 2;
+  }
+
+  /* Course grids */
+  .levels-grid,
+  .crash-grid,
+  .competitive-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .level-card,
+  .crash-card,
+  .comp-card {
+    padding: 14px;
+  }
+
+  .level-head,
+  .meta-row {
+    gap: 0.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .level-head h3 {
+    font-size: 1.2rem;
+  }
+
+  .features-list {
+    margin-left: 16px;
+  }
+
+  /* Enroll section */
+  .Enroll-section {
+    padding: 1.2rem 0;
+    align-items: stretch;
+  }
+
+  .Enroll-card {
+    width: calc(100% - 20px);
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .Enroll-card h3 {
+    font-size: 1.25rem;
+  }
+
+  .Enroll-form .form-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .Enroll-form .form-row > * {
+    flex: 1 1 auto;
+  }
+
+  .Enroll-form input,
+  .Enroll-form select {
+    height: 48px;
+    font-size: 0.96rem;
+    border-radius: 14px;
+  }
+
+  .Enroll-form > div:last-child {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Enroll-form .btn {
+    width: 100%;
+    min-width: 0;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .note {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0.85rem;
+    border-radius: 12px;
+  }
+
+  /* Footer */
+  .site-footer {
+    margin-top: 2rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  .footer-brand img {
+    height: 56px;
+  }
+
+  .footer-social a {
+    font-size: 20px;
+    padding: 6px 10px;
+  }
+
+  .footer-links .footer-nav {
+    gap: 0.4rem;
+  }
+
+  .site-footer .copyright {
+    text-align: center;
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .top-item {
+    font-size: 13px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.65rem;
+  }
+
+  .lead {
+    font-size: 0.94rem;
+  }
+
+  .section-header .titles {
+    font-size: 22px;
+  }
+
+  .level-head h3 {
+    font-size: 1.08rem;
+  }
+
+  .pill,
+  .badge {
+    font-size: 0.9rem;
+  }
+
+  .Enroll-card {
+    width: calc(100% - 16px);
+    padding: 0.9rem;
+  }
+
+  .footer-text {
+    font-size: 0.9rem;
+  }
+}
