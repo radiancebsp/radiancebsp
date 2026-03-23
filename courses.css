@@ -546,8 +546,8 @@ a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0
 
 
 /* =========================================================
-   ANDROID / MOBILE PATCH
-   Paste this at the VERY END of courses.css
+   MOBILE OVERRIDES ONLY
+   Append this at the VERY END of courses.css
    ========================================================= */
 
 @media (max-width: 768px) {
@@ -591,7 +591,7 @@ a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0
   .main-nav ul {
     flex-wrap: wrap;
     gap: 0.35rem;
-    justify-content: flex-end;
+    justify-content: center;
   }
 
   .main-nav a {
@@ -719,17 +719,26 @@ a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0
     padding: 1rem 0;
   }
 
+  .footer-col {
+    text-align: center;
+  }
+
   .footer-brand img {
     height: 56px;
+    margin: 0 auto 0.5rem;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  .footer-links .footer-nav {
+    align-items: center;
   }
 
   .footer-social a {
     font-size: 20px;
     padding: 6px 10px;
-  }
-
-  .footer-links .footer-nav {
-    gap: 0.4rem;
   }
 
   .site-footer .copyright {
@@ -749,10 +758,6 @@ a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0
 
   .lead {
     font-size: 0.94rem;
-  }
-
-  .section-header .titles {
-    font-size: 22px;
   }
 
   .level-head h3 {
