@@ -621,18 +621,7 @@ main{
 
 
 
-/* =========================================================
-   MOBILE OVERRIDES ONLY
-   Add this at the VERY END of Style.css
-   ========================================================= */
-
 @media (max-width: 768px) {
-  .container {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-
-  /* Top bar */
   .top-bar {
     padding: 10px 12px;
   }
@@ -656,9 +645,11 @@ main{
     margin-left: 6px;
   }
 
-  /* Header */
   .header-inner {
-    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 0;
   }
 
   .logo {
@@ -666,7 +657,14 @@ main{
   }
 
   .main-nav ul {
-    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+    padding: 0.45rem 0.7rem;
   }
 
   /* Slider */
