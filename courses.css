@@ -760,6 +760,10 @@ a:focus,button:focus,input:focus,select:focus{outline:3px solid rgba(1,118,168,0
     font-size: 0.94rem;
   }
 
+  .section-header .titles {
+    font-size: 22px;
+  }
+
   .level-head h3 {
     font-size: 1.08rem;
   }
