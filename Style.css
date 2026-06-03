@@ -622,122 +622,51 @@ main{
 
 
 /* =========================================================
-   ANDROID / MOBILE PATCH
-   Paste at the very end of Style.css
+   RESPONSIVE PATCH
    ========================================================= */
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
+/* Tablet */
+@media (max-width:1024px){
 
-img, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-/* Better tap targets */
-a, button, input, select, summary {
-  touch-action: manipulation;
-}
-
-/* ---------- Tablets and small laptops ---------- */
-@media (max-width: 1024px) {
-  .container {
-    padding: 0 16px;
+  .container{
+    padding:0 16px;
   }
 
-  .top-item {
-    font-size: 16px;
+  .hero{
+    grid-template-columns:1fr;
+    gap:1.5rem;
   }
 
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .hero-right{
+    width:100%;
+    max-width:100%;
   }
 
-  .hero-right {
-    width: 100%;
-    max-width: 100%;
+  .callback{
+    grid-template-columns:1fr;
   }
 
-  .callback {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
   }
 
   main,
-  .nav {
-    width: 92%;
+  .nav{
+    width:92%;
   }
 }
 
-/* ---------- Android phones ---------- */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 14px;
+
+/* Mobile */
+@media (max-width:768px){
+
+  .container{
+    padding:0 14px;
   }
 
-  /* Top bar */
-  .top-bar {
-    padding: 10px 12px;
-  }
-
-  .top-bar-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .top-item {
-    font-size: 14px;
-    white-space: normal;
-    line-height: 1.4;
-  }
-
-  .social a {
-    width: 26px;
-    height: 26px;
-    font-size: 14px;
-    margin-left: 6px;
-  }
-
-  /* Header / nav */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-
-  .header-inner {
-    padding: 10px 0;
-  }
-
-  .logo {
-    height: 50px;
-  }
-
-    .main-nav ul{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:8px;
-
-    margin:0;
-    padding:0;
-  }
-
-  .main-nav a{
-    font-size:14px;
-    padding:8px 12px;
+  .top-bar-inner{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
   .header-inner{
@@ -745,256 +674,104 @@ a, button, input, select, summary {
     gap:12px;
   }
 
-}
-
-  /* Slider */
-  main {
-    width: calc(100vw - 24px);
-    aspect-ratio: 1331 / 496;
-    height: auto !important;
-    margin: 12px auto 0;
-    border-radius: 10px;
+  .logo{
+    height:50px;
   }
 
-  .slide {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;   /* shows the full banner */
-    background: #fff;
-    border-radius: 10px;
+  .main-nav ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:8px;
   }
 
-
-  .nav {
-    width: 100%;
-    margin: 10px auto 0;
-    justify-content: center;
-    gap: 12px;
+  .main-nav a{
+    font-size:14px;
+    padding:8px 12px;
   }
 
-  .nav button {
-    min-width: 48px;
-    min-height: 48px;
-    padding: 10px 12px;
-    border-radius: 12px;
+  /* HERO */
+  .hero{
+    grid-template-columns:1fr;
+    gap:1rem;
+    padding:1.25rem 0;
   }
 
-  .nav button img {
-    height: 18px;
+  .hero-right{
+    width:100%;
+    max-width:100%;
   }
 
-  /* Hero */
-  .hero {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1.25rem 0;
+  .cta-row{
+    flex-direction:column;
   }
 
-  .hero-left h2 {
-    font-size: 1.4rem;
-    line-height: 1.25;
+  .btn{
+    width:100%;
   }
 
-  .hero-left p {
-    font-size: 0.96rem;
+  /* DIRECTORS */
+  .owners-grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
   }
 
-  .cta-row {
-    flex-direction: column;
-    align-items: stretch;
-    padding-top: 20px !important;
+  .owner-card{
+    flex-direction:column;
+    align-items:flex-start;
   }
 
-  .btn {
-    width: 100%;
-    min-height: 46px;
+  .director-profile{
+    width:100%;
+    max-width:100%;
   }
 
-  .hero-right {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 12px;
+  /* CALLBACK */
+  .callback{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:1rem;
   }
 
-  .hero-right video {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+  .form-row{
+    flex-direction:column;
   }
 
-  /* Directors */
-  .owners-section {
-    padding: 1.2rem 0;
+  /* FOOTER */
+  .footer-grid{
+    grid-template-columns:1fr;
   }
 
-  .owners-grid {
-    flex-direction: column;
-    gap: 0.9rem;
+  /* SLIDER */
+  main{
+    width:calc(100vw - 24px);
+    height:auto;
   }
 
-  .owner-card {
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-    padding: 12px;
-  }
-
-  .director-profile {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Testimonials */
-  .testimonials {
-    padding: 28px 0;
-  }
-
-  .testimonials-item {
-    max-width: 100%;
-    padding: 16px;
-    border-radius: 12px;
-  }
-
-  .testimonials-item .info {
-    align-items: flex-start;
-  }
-
-  .testimonials-item img {
-    width: 54px;
-    height: 54px;
-  }
-
-  .testimonials-item p {
-    font-size: 0.92rem;
-    line-height: 1.55;
-  }
-
-  .swiper-pagination {
-    margin-top: 14px;
-  }
-
-  /* FAQ */
-  .faq-section {
-    padding: 1.3rem 0 1rem;
-  }
-
-  .faq-item summary {
-    padding: 0.95rem 1rem;
-    font-size: 0.98rem;
-  }
-
-  .faq-item p {
-    padding: 0 1rem 1rem;
-    font-size: 0.94rem;
-  }
-
-  /* Callback / enquiry */
-  .callback {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 1rem 0;
-  }
-
-  .call-left,
-  form.enquiry {
-    padding: 1rem;
-  }
-
-  .call-left p {
-    font-size: 1rem;
-  }
-
-  .form-row {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0.75rem;
-  }
-
-  .form-row input,
-  .form-row select {
-    width: 100%;
-    min-height: 46px;
-    font-size: 16px; /* prevents Android zoom on focus */
-  }
-
-  /* Footer */
-  .site-footer {
-    margin-top: 2rem;
-    padding-top: 1.2rem;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .footer-brand img {
-    height: 56px;
-  }
-
-  .footer-social a {
-    font-size: 20px;
-    padding: 6px 10px;
-  }
-
-  .site-footer .copyright {
-    text-align: center;
-    font-size: 0.82rem;
-  }
-
-
-/* ---------- Very small Android phones ---------- */
-@media (max-width: 480px) {
-  .top-item {
-    font-size: 12px;
-  }
-
-  .logo {
-    height: 44px;
-  }
-
-  main {
-    height: 185px;
-  }
-
-  .hero-left h2 {
-    font-size: 1.22rem;
-  }
-
-  .hero-left p {
-    font-size: 0.92rem;
-  }
-
-  .owner-card {
-    padding: 10px;
-  }
-
-  .testimonials-item {
-    padding: 14px;
-  }
-
-  .faq-item summary {
-    font-size: 0.95rem;
-  }
-
-  .nav button img {
-    height: 16px;
+  .nav{
+    width:100%;
   }
 }
 
-/* ---------- Optional polish for touch devices ---------- */
-@media (hover: none) and (pointer: coarse) {
-  .btn:hover,
-  .main-nav a:hover,
-  .social a:hover,
-  .footer-social a:hover {
-    transform: none;
+
+/* Small phones */
+@media (max-width:480px){
+
+  .logo{
+    height:44px;
   }
 
-  .btn,
-  .nav button,
-  .social a,
-  .footer-social a {
-    min-height: 44px;
+  .hero-left h2{
+    font-size:1.25rem;
   }
+
+  .hero-left p{
+    font-size:0.92rem;
+  }
+
+  .top-item{
+    font-size:12px;
+  }
+
 }
